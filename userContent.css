@@ -1,0 +1,55 @@
+@-moz-document url("about:home"), url("about:newtab") {
+
+  .search-handoff-button,
+  #search-handoff-button,
+  #searchContainer,
+  .search-wrapper form,
+  form[role="search"] {
+    display: none !important;
+  }
+
+  .logo-and-wordmark {
+    gap: 32px !important;
+  }
+
+  .logo, .wordmark {
+    animation: zen-pop-in 3s cubic-bezier(0.12, 0.9, 0.2, 1) 0.5s both !important;
+  }
+
+  .logo {
+    transform: scale(1.8);
+  }
+
+  .wordmark {
+    transform: scale(1.6);
+  }
+
+  .personalizeButtonWrapper {
+    display: none !important;
+  }
+
+  .search-wrapper {
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  @keyframes zen-pop-in {
+    from {
+      opacity: 0;
+      margin-top: -100px;
+      filter: blur(2px);
+    }
+    to {
+      opacity: 1;
+      margin-top: 0px;
+      filter: blur(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo, .wordmark {
+      animation: none !important;
+    }
+  }
+}
